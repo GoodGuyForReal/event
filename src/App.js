@@ -5,12 +5,14 @@ import HomePage from "./components/pages/home/HomePage";
 import { AuthContextProvider } from "./context/UserAuth";
 import SignUp from "./components/pages/signUp/SignUpPage";
 import SignIn from "./components/pages/signIn/SignInPage";
+import Navbar from "./components/elements/navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
       <ProjectContextProvider>
         <AuthContextProvider>
+          <Navbar />
           <Routes>
             <Route path="*" element={<HomePage />} />
             <Route path="/signup" element={<SignUp />} />

@@ -6,9 +6,6 @@ import { getUser } from "../repository/GetUser";
 
 
 const AuthContext = createContext();
-
-const headerBgUrl = 'https://images.unsplash.com/photo-1676968986443-7f47aad7d993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80'
-
 export function AuthContextProvider({ children }) {
     const [currentUser, setCurrentUser] = useState([])
 
@@ -24,10 +21,9 @@ export function AuthContextProvider({ children }) {
 
                 const userData = {
                     email: email,
-                    joindate: new Date().getTime(),
-                    coverimgurl: headerBgUrl,
                     username: userName,
-                    uid: res.user.uid
+                    uid: res.user.uid,
+                    role: 'admin'
                 }
 
                 await setDoc(ref, userData)
