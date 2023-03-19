@@ -1,16 +1,16 @@
 import React from 'react'
 import EventCard from './components/EventCard'
-import { eventData } from '../../../mock/MockEvent'
 import EventHeaderCard from './components/EventHeaderCard'
+import { UserOp } from '../../../context/UserOp'
 
 const HomePage = () => {
-    const headerEvent = eventData.slice(0, 1)
-    const contentEvent = eventData.slice(1)
+    const { allEvents } = UserOp()
+    const headerEvent = allEvents.slice(0, 1)
+    const contentEvent = allEvents.slice(1)
 
     return (
         <div className='HomePage'>
             <div className='HomePageBody flex gap-16 flex-col mx-auto max-w-7xl px-5 md:px-10'>
-
 
                 <div className='Header'>
                     <div className='HeaderBody w-full'>

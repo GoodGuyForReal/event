@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { eventData } from "../mock/MockEvent";
 import { db } from "../Firebase";
 import { getAllEvents } from "../repository/GetAllEvents";
 
@@ -19,12 +18,12 @@ export function ProjectContextProvider({ children }) {
 
 
     useEffect(() => {
-        const pickedEvent = eventData.find(event => event.id === docRefId)
+        const pickedEvent = allEvents.find(event => event.id === docRefId)
         console.log(pickedEvent);
         if (pickedEvent) {
             setProjectData(pickedEvent);
         }
-    }, [docRefId])
+    }, [allEvents, docRefId])
 
     console.log(projectData);
 
