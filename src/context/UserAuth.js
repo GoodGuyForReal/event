@@ -23,7 +23,7 @@ export function AuthContextProvider({ children }) {
                     email: email,
                     username: userName,
                     uid: res.user.uid,
-                    role: 'admin'
+                    role: 0
                 }
 
                 await setDoc(ref, userData)
@@ -41,6 +41,7 @@ export function AuthContextProvider({ children }) {
 
 
     useEffect(() => { getUser(db, user, setCurrentUser) }, [user])
+    console.log(currentUser);
 
     return (
         <AuthContext.Provider value={{ SignUp, LogOut, SignIn, user, currentUser }}>

@@ -9,7 +9,7 @@ const HomePage = () => {
     const contentEvent = allEvents.slice(1)
 
     return (
-        <div className='HomePage'>
+        <div className='HomePage mt-16'>
             <div className='HomePageBody flex gap-16 flex-col mx-auto max-w-7xl px-5 md:px-10'>
 
                 <div className='Header'>

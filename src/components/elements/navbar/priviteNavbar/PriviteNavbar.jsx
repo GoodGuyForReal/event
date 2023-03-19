@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../../../context/UserAuth";
 import { auth } from "../../../../Firebase";
+import NavItems from "../publicNavbar/components/NavItems";
 
 
 
@@ -19,6 +20,8 @@ const PriviteNav = () => {
 
         }
     };
+
+
     const toggleMenu = () => setIsOpen(!isOpen)
 
     return (
@@ -57,13 +60,7 @@ const PriviteNav = () => {
                     }`}
             >
                 <div className="text-sm lg:flex-grow">
-                    <Link
-                        to='/dashboard'
-                        className="text-[14px] font-medium block mt-4 lg:inline-block lg:mt-0 text-slate-800 hover:text-slate-500 duration-200 mr-4"
-                    >
-                        Dash Board
-                    </Link>
-
+                    <NavItems />
                 </div>
                 <div className='flex gap-5'>
                     <button

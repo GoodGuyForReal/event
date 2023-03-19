@@ -5,8 +5,10 @@ import PublicNavbar from './publicNavbar/PublicNavbar';
 
 
 const Navbar = () => {
-
     const { user } = UserAuth();
+
+
+
     return (
         <div>
             {!user ?
