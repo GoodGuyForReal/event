@@ -16,6 +16,10 @@ const Details = () => {
         <div className='Details h-[50vh] w-full p-10'>
             {projectData ? <div className='Details_Body h-full w-full flex flex-col gap-8 mx-auto max-w-7xl px-0 md:px-10'>
 
+                <div>
+                    <img src="" alt="" />
+                </div>
+
                 <h3 className='EventTitle text-[58px] font-bold'>{projectData.eventName}</h3>
 
                 <div className='Details_BodyHeader w-full flex flex-col gap-5'>
