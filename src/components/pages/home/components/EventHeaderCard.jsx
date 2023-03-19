@@ -13,7 +13,7 @@ const EventHeaderCard = ({ item }) => {
 
 
     return (
-        <div className='EventHeaderCard h-[50vh] w-full p-10 rounded-md' style={{ backgroundColor: color }}>
+        <div className='EventHeaderCard min-h-[50vh] h-full w-full p-10 rounded-md' style={{ backgroundColor: color }}>
             <div className='EventHeaderCard_Body h-full w-full flex flex-col justify-between'>
 
                 <div className='CardHeader w-full text-right'>
@@ -21,7 +21,7 @@ const EventHeaderCard = ({ item }) => {
                     <p className='EventDate text-[14px]'>{date}</p>
                 </div>
 
-                <div className='CardMain flex items-end justify-between gap-4'>
+                <div className='CardMain flex flex-col md:flex-row items-end justify-between gap-4'>
                     <div className='CardMainContent flex flex-col gap-5'>
                         <h3 className='EventTitle text-[48px] font-bold'>{item.eventName}</h3>
                         <p className='EventTitle text-[18px] leading-[150%] max-w-3xl'>{item.description}</p>
