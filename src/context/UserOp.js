@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { eventData } from "../../mock/MockEvent";
+import { eventData } from "../mock/MockEvent";
+import { db } from "../Firebase";
+import { getAllEvents } from "../repository/GetAllEvents";
 
 
 const ProjectContext = createContext();
@@ -9,6 +11,11 @@ export function ProjectContextProvider({ children }) {
     const [docRefId, setDocRefId] = useState('')
     const [projectData, setProjectData] = useState()
 
+    useEffect(() => {
+        getAllEvents(db, setAllEvents)
+    }, [])
+
+    console.log(allEvents);
 
 
     useEffect(() => {

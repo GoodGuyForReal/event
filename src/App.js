@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { ProjectContextProvider } from "./components/context/UserOp";
+import { ProjectContextProvider } from "./context/UserOp";
 import Details from "./components/pages/details/Details";
 import HomePage from "./components/pages/home/HomePage";
 

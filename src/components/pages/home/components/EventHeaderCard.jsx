@@ -1,10 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { getRandomPastelColor } from '../../../../useCase/ColorGenerator '
 
 const EventHeaderCard = ({ item }) => {
-
+    const navigate = useNavigate()
     const date = new Date(item.date).toLocaleDateString()
     const color = getRandomPastelColor()
+
+    const handleDetails = () => {
+        navigate(`/details/${item.id}`, { state: item.id })
+    }
+
 
     return (
         <div className='EventHeaderCard h-[50vh] w-full p-10 rounded-md' style={{ backgroundColor: color }}>
@@ -21,7 +27,7 @@ const EventHeaderCard = ({ item }) => {
                         <p className='EventTitle text-[18px] leading-[150%] max-w-3xl'>{item.description}</p>
                     </div>
                     <div>
-                        <button className='py-3 px-16 w-full bg-blue-600 text-white text-[14px] rounded-md'>Details</button>
+                        <button onClick={handleDetails} className='py-3 px-16 w-full bg-blue-600 text-white text-[14px] rounded-md'>Details</button>
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { UserOp } from '../../context/UserOp'
+import { UserOp } from '../../../context/UserOp'
 
 const Details = () => {
     const { state: id } = useLocation()
@@ -18,9 +18,10 @@ const Details = () => {
 
                 <h3 className='EventTitle text-[58px] font-bold'>{projectData.eventName}</h3>
 
-                <div className='Details_BodyHeader w-full flex gap-5'>
+                <div className='Details_BodyHeader w-full flex flex-col gap-5'>
                     <p className='EventDate text-[18px]'>Katılan Kişi Sayısı: {projectData.attendance?.length}</p>
-                    <p className='EventDate text-[18px]'>{date}</p>
+                    <p className='EventDate text-[18px]'>Tarih: {date}</p>
+                    <p className='EventDate text-[18px]'>Saat: 12:00 PM - 2:00 PM</p>
                 </div>
 
                 <div className='EventDescription flex flex-col gap-4'>
@@ -33,7 +34,7 @@ const Details = () => {
                     <button className='py-3 px-16 border text-blue-600 hover:underline text-[14px] font-medium rounded-md'>Web sitesine Git</button>
                 </div>
 
-            </div> : '...'}
+            </div> : <p>Yukleniyor...</p>}
 
         </div>
     )
