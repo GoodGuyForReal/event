@@ -9,6 +9,7 @@ import Navbar from "./components/elements/navbar/Navbar";
 import User from "./components/pages/user/User";
 import AdminSignIn from "./components/pages/admin/signIn/AdminSignIn";
 import AdminPanel from "./components/pages/admin/AdminPanel";
+import CreateEvent from "./components/pages/admin/createEvent/CreateEvent";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/user" element={<User />} />
             <Route path="/admin" element={<AdminSignIn />} />
             <Route path="/adminpanel/:id" element={<AdminPanel />} />
+            <Route path="/adminpanel/:id/createvent" element={<CreateEvent />} />
 
           </Routes>
         </AuthContextProvider>

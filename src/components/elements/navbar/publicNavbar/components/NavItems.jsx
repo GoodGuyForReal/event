@@ -18,6 +18,9 @@ const NavItems = () => {
                         <li className="hover:text-[#ff51ae] duration-200">
                             <NavLink to={`/adminpanel/${user.uid}`} className="block py-2 pr-4 pl-3 font-medium text-[15px]">Admin Panel</NavLink>
                         </li>
+                        <li className="hover:text-[#ff51ae] duration-200">
+                            <NavLink to={`/adminpanel/${user.uid}/createvent`} className="block py-2 pr-4 pl-3 font-medium text-[15px]">Etkinlik Oluştur</NavLink>
+                        </li>
                     </ul>
                     :
                     <ul className="flex gap-4 items-center  w-full  p-3 text-[#212121]">
