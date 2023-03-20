@@ -16,7 +16,7 @@ const CreateEvent = () => {
 
     console.log(startTime);
     console.log(endTime);
-    
+
     const createNewTask = async (e) => {
         e.preventDefault();
         // Add logic to create new event with form data
@@ -65,6 +65,7 @@ const CreateEvent = () => {
                     </div>
 
                     <div className='Time flex flex-warp gap-4 items-center'>
+
                         <div className='StartTime'>
                             <label className="block w-full text-sm font-medium text-gray-900">Başlangıç Saati</label>
                             <input type="time"
@@ -72,14 +73,18 @@ const CreateEvent = () => {
                                 onChange={(time) => setStartTime(time.target.value)}
                             />
                         </div>
+
                         <hr className='border-[1px] border-slate-600 w-3 mt-5' />
+
                         <div className='EndTime'>
                             <label className="block w-full text-sm font-medium text-gray-900">Bitiş Saati</label>
                             <input type="time"
                                 className='border rounded-lg px-3 py-2 mt-1 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent'
                                 onChange={(time) => setEndTime(time.target.value)}
+                                defaultValue={startTime}
                             />
                         </div>
+
                     </div>
 
 
