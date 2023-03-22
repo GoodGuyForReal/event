@@ -9,7 +9,7 @@ const NavItems = () => {
         <div>
 
             <div className="flex flex-row md:flex-col">
-                {currentUser.role !== 0 ?
+                {currentUser.isAdmin ?
 
                     <ul className="flex gap-4 items-center  w-full  p-3 text-[#212121]">
                         <li className="hover:text-[#ff51ae] duration-200">

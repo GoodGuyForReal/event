@@ -23,7 +23,7 @@ export function AuthContextProvider({ children }) {
                     email: email,
                     username: userName,
                     uid: res.user.uid,
-                    role: 0
+                    isAdmin: true
                 }
 
                 await setDoc(ref, userData)
