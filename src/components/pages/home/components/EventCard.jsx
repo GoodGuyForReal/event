@@ -4,7 +4,8 @@ import { getRandomPastelColor } from '../../../../useCase/ColorGenerator '
 
 const EventCard = ({ item }) => {
     const navigate = useNavigate()
-    const date = new Date(item.date).toLocaleDateString()
+    const startDate = new Date(item.startDate.seconds * 1000).toDateString();
+    const endDate = new Date(item.endDate.seconds * 1000).toDateString();
     const color = getRandomPastelColor()
 
     const handleDetails = () => {
@@ -17,11 +18,12 @@ const EventCard = ({ item }) => {
 
                 <div className='CardHeader w-full text-right'>
                     <p className='EventDate text-[14px]'>{item.attendance?.length}</p>
-                    <p className='EventDate text-[14px]'>{date}</p>
+                    <p className='EventDate text-[14px]'>{startDate}</p>
+                    <p className='EventDate text-[14px]'>{endDate}</p>
                 </div>
 
                 <div className='CardMain flex flex-col gap-4'>
-                    <h3 className='EventTitle text-[20px] font-bold'>{item.eventName}</h3>
+                    <h3 className='EventTitle text-[20px] font-bold'>{item.title}</h3>
                     <button onClick={handleDetails} className='py-2 w-full bg-blue-600 text-white text-[14px] rounded-md'>Details</button>
                 </div>
 

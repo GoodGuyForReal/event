@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { UserAuth } from '../../../../context/UserAuth';
-import TextEditor from '../../../elements/textEditor/TextEditor';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { newEventHandler } from '../../../../repository/CreateEvent';
@@ -18,6 +17,8 @@ const CreateEvent = () => {
 
     console.log(startTime);
     console.log(endTime);
+    console.log(startDate);
+    console.log(endTime);
 
     const eventObj = {
         title: title,
@@ -32,6 +33,7 @@ const CreateEvent = () => {
     const createNewTask = (e) => {
         e.preventDefault();
         newEventHandler(user, eventObj)
+        alert('Event published')
     };
 
     return (
@@ -113,18 +115,12 @@ const CreateEvent = () => {
 
                     <div className="TextArea">
                         <label className="block w-full text-sm font-medium text-gray-900">Description</label>
-                        <TextEditor
-                            content={description}
-                            setContent={setDescription}
-                            readonly={false}
-                            toolBarIsVisble={true}
-                            height={'50vh'}
-                        />
+                        <textarea onChange={(e) => setDescription(e.target.value)} id="message" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Event description..." />
                     </div>
 
                     <div className="flex flex-wrap gap-5">
-                        <input type="submit" className="bg-blue-600 text-white rounded-lg py-3 px-12" value={'Oluştur'} />
-                        <input type="button" className="cursor-pointer underline border text-blue-600 rounded-lg py-3 px-12" value={'Ön İzleme'} />
+                        <input type="submit" className="bg-blue-600 cursor-pointer text-white rounded-lg py-3 px-12" value={'Publish'} />
+                        <input type="button" className="cursor-pointer underline border text-blue-600 rounded-lg py-3 px-12" value={'Preview'} />
                     </div>
 
                 </form>
