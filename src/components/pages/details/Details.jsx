@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { UserAuth } from '../../../context/UserAuth'
 import { UserOp } from '../../../context/UserOp'
+import { JoinEvent } from '../../../repository/JoinEvent'
+import { LeaveEvent } from '../../../repository/LeaveEvent'
 
 const Details = () => {
     const { state: id } = useLocation()
@@ -12,13 +14,27 @@ const Details = () => {
         setDocRefId(id)
     }, [id, setDocRefId])
 
+    const isUserJoined = projectData?.attendance.find(userId => userId.uid === user.uid)
+    console.log(isUserJoined);
+
     const handleJoinEvent = () => {
         if (user) {
-
+            JoinEvent(user, id)
         } else {
             alert('katilmak için lütfen girişi yapın')
         }
     }
+
+    const handleLeaveEvent = () => {
+        if (user) {
+            LeaveEvent(user, id)
+        } else {
+            alert('katilmak için lütfen girişi yapın')
+        }
+    }
+
+
+
     const startDate = new Date(projectData?.startDate?.seconds * 1000).toDateString();
     const endDate = new Date(projectData?.endDate?.seconds * 1000).toDateString();
     console.log(startDate);
@@ -46,7 +62,11 @@ const Details = () => {
                 </div>
 
                 <div className='flex gap-5 flex-wrap'>
-                    <button onClick={handleJoinEvent} className='py-3 px-16 bg-blue-600 text-white text-[14px] rounded-md'>Join</button>
+                    {!isUserJoined ?
+                        <button onClick={handleJoinEvent} className='py-3 px-16 bg-blue-600 text-white text-[14px] rounded-md'>Join</button>
+                        :
+                        <button onClick={handleLeaveEvent} className='py-3 px-16 bg-gray-600 text-white text-[14px] rounded-md'>Undo</button>}
+
                     <button className='py-3 px-16 border text-blue-600 hover:underline text-[14px] font-medium rounded-md'>Go to the website</button>
                 </div>
 
