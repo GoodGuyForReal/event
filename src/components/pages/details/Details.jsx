@@ -21,23 +21,15 @@ const Details = () => {
         if (user) {
             JoinEvent(user, id)
         } else {
-            alert('katilmak için lütfen girişi yapın')
+            alert('Signin for join event')
         }
     }
 
-    const handleLeaveEvent = () => {
-        if (user) {
-            LeaveEvent(user, id)
-        } else {
-            alert('katilmak için lütfen girişi yapın')
-        }
-    }
-
-
+    const handleLeaveEvent = () => LeaveEvent(user, id)
 
     const startDate = new Date(projectData?.startDate?.seconds * 1000).toDateString();
     const endDate = new Date(projectData?.endDate?.seconds * 1000).toDateString();
-    console.log(startDate);
+
     console.log(projectData);
 
     return (
@@ -62,10 +54,12 @@ const Details = () => {
                 </div>
 
                 <div className='flex gap-5 flex-wrap'>
-                    {!isUserJoined ?
-                        <button onClick={handleJoinEvent} className='py-3 px-16 bg-blue-600 text-white text-[14px] rounded-md'>Join</button>
-                        :
-                        <button onClick={handleLeaveEvent} className='py-3 px-16 bg-gray-600 text-white text-[14px] rounded-md'>Undo</button>}
+                    {
+                        !isUserJoined ?
+                            <button onClick={handleJoinEvent} className='py-3 px-16 bg-blue-600 text-white text-[14px] rounded-md'>Join</button>
+                            :
+                            <button onClick={handleLeaveEvent} className='py-3 px-16 bg-gray-600 text-white text-[14px] rounded-md'>Undo</button>
+                    }
 
                     <button className='py-3 px-16 border text-blue-600 hover:underline text-[14px] font-medium rounded-md'>Go to the website</button>
                 </div>
