@@ -15,7 +15,10 @@ const User = () => {
     console.log(userEvents)
     return (
         <div className='User_Body h-full w-full flex flex-col gap-8 mx-auto max-w-7xl px-0 md:px-10 p-10'>
-
+            <div className='UserHeader flex flex-col gap-10'>
+                <h1 className='text-2xl md:text-6xl lg:text-7xl font-bold'>My Events</h1>
+                <h2 className='text-2xl md:text-xl'>Email: {user.email}</h2>
+            </div>
 
             <div className='Main'>
                 <div className='MainBody flex flex-wrap gap-4'>

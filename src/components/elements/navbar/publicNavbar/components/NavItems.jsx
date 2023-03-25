@@ -12,23 +12,23 @@ const NavItems = () => {
                 {currentUser.isAdmin ?
 
                     <ul className="flex gap-4 items-center  w-full  p-3 text-[#212121]">
-                        <li className="hover:text-[#ff51ae] duration-200">
-                            <NavLink to={'/'} className="block py-2 pr-4 pl-3 font-medium text-[15px]" aria-current="page">Ana Sayfa</NavLink>
+                        <li className="hover:text-blue-500 duration-200">
+                            <NavLink to={'/'} className="block py-2 pr-4 pl-3 font-medium text-[15px]" aria-current="page">Home</NavLink>
                         </li>
-                        <li className="hover:text-[#ff51ae] duration-200">
+                        <li className="hover:text-blue-500 duration-200">
                             <NavLink to={`/adminpanel/${user.uid}`} className="block py-2 pr-4 pl-3 font-medium text-[15px]">Admin Panel</NavLink>
                         </li>
-                        <li className="hover:text-[#ff51ae] duration-200">
-                            <NavLink to={`/adminpanel/${user.uid}/createvent`} className="block py-2 pr-4 pl-3 font-medium text-[15px]">Etkinlik Oluştur</NavLink>
+                        <li className="hover:text-blue-500 duration-200">
+                            <NavLink to={`/adminpanel/${user.uid}/createvent`} className="block py-2 pr-4 pl-3 font-medium text-[15px]">Create Event</NavLink>
                         </li>
                     </ul>
                     :
                     <ul className="flex gap-4 items-center  w-full  p-3 text-[#212121]">
-                        <li className="hover:text-[#ff51ae] duration-200">
-                            <NavLink to={'/'} className="block py-2 pr-4 pl-3 font-medium text-[15px]" aria-current="page">Ana Sayfa</NavLink>
+                        <li className="hover:text-blue-500 duration-200">
+                            <NavLink to={'/'} className="block py-2 pr-4 pl-3 font-medium text-[15px]" aria-current="page">Home</NavLink>
                         </li>
-                        <li className="hover:text-[#ff51ae] duration-200">
-                            <NavLink to={'/user'} className="block py-2 pr-4 pl-3 font-medium text-[15px]">Hesap</NavLink>
+                        <li className="hover:text-blue-500 duration-200">
+                            <NavLink to={'/user'} className="block py-2 pr-4 pl-3 font-medium text-[15px]">Account</NavLink>
                         </li>
                     </ul>
                 }
